@@ -1,0 +1,12 @@
+Assignment 1B
+
+1. A) Create a list of the first ten even numbers. Access and print the 5th element in the list. Slice the list to create a sublist containing the elements from index 3 to 7 (inclusive). Print the sublist.
+
+B) Create two lists: one with the first five positive integers and another with the first five odd numbers. Concatenate these lists and print the result.
+
+2. A) From a give list of 10 elements remove the nth element (n is user input) from the list in reverse order and display the updated list.
+
+B) Search for an element from a list using loop. If the element is found, display its position in the list, otherwise indicate that the element is not present.
+
+3. A) Take two inputs from the user: start_index and end_index. Now consider a list with n elements and remove items from the start_index to but not including the end_index. Display the final updated list. 
+   B) Print the final length of the list.

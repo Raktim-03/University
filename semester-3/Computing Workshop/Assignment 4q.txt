@@ -1,0 +1,7 @@
+Assignment 4
+
+1. Write a function that takes a dictionary as input, adds one more key-value pair to the dictionary, and prints the updated one.
+2. Write a function to filter a dictionary, keeping only entries where the value is greater than a given number.
+3. Write a function that accepts a dictionary, removes the last item from it, and displays the updated dictionary
+4. Write a function that takes a list of strings as input. The input may or may not contain palindrome strings. If the list does not contain any palindrome it can display "No palindrome". Otherwise, it returns a list of all the palindromes in the input list.
+5. Write a function that takes any string as input and returns a python dictionary with each character and its frequency of occurrence (the character is to be the key in the dictionary and the frequency its value).
