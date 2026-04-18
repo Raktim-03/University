@@ -1,0 +1,35 @@
+USER(user_id PK, full_name, email, username, password, role, created_at)
+
+MENTEE(mentee_id PK FK→USER)
+
+MENTOR(mentor_id PK FK→USER)
+
+COORDINATOR(coordinator_id PK FK→USER)
+
+PAIRING(pairing_id PK, mentor_id FK→MENTOR,
+        mentee_id FK→MENTEE,
+        assigned_by FK→COORDINATOR,
+        academic_year, update_frequency, status, assigned_date)
+
+PROGRESS_REPORT(progress_id PK, pairing_id FK→PAIRING,
+                description, file_path, submitted_date)
+
+PROBLEM_REPORT(problem_id PK, pairing_id FK→PAIRING,
+               description, severity_level, status, submitted_date)
+
+FEEDBACK(feedback_id PK, mentor_id FK→MENTOR,
+         progress_id FK→PROGRESS_REPORT,
+         problem_id FK→PROBLEM_REPORT,
+         comment, created_at)
+
+MEETING(meeting_id PK, pairing_id FK→PAIRING,
+        scheduled_date, duration, agenda, status)
+
+MEETING_LOG(log_id PK, meeting_id FK→MEETING,
+            discussion_points, action_items, created_at)
+
+MESSAGE(message_id PK, pairing_id FK→PAIRING,
+        sender_id FK→USER, message_text, sent_at)
+
+NOTIFICATION(notification_id PK, user_id FK→USER,
+             message, type, is_read, created_at)

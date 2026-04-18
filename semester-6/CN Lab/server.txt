@@ -1,0 +1,43 @@
+#include <stdio.h>
+#include <string.h>
+#include <unistd.h>
+#include <arpa/inet.h>
+
+int main() {
+
+    int server_socket, client_socket;
+    struct sockaddr_in server_addr;
+    char buffer[1024];
+    char message[] = "Hello";
+
+    // 1. Create socket
+    server_socket = socket(AF_INET, SOCK_STREAM, 0);
+
+    // 2. Define address
+    server_addr.sin_family = AF_INET;
+    server_addr.sin_port = htons(8080);
+    server_addr.sin_addr.s_addr = INADDR_ANY;
+
+    // 3. Bind
+    bind(server_socket, (struct sockaddr*)&server_addr, sizeof(server_addr));
+
+    // 4. Listen
+    listen(server_socket, 1);
+    printf("Waiting for client...\n");
+
+    // 5. Accept
+    client_socket = accept(server_socket, NULL, NULL);
+
+    // 6. Receive message
+    read(client_socket, buffer, sizeof(buffer));
+    printf("Client says: %s\n", buffer);
+
+    // 7. Send reply
+    write(client_socket, message, strlen(message));
+
+    // 8. Close
+    close(client_socket);
+    close(server_socket);
+
+    return 0;
+}

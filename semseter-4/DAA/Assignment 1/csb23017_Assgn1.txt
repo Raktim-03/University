@@ -1,0 +1,40 @@
+def max_fibonacci_index_sorted(a, n):
+    if n == 0:
+        return -1
+    
+    F_k_minus_2 = 0
+    F_k_minus_1 = 1
+    k = 0
+    i = 0
+    
+    while i < n:
+        if a[i] == F_k_minus_2:
+            k += 1
+            F_k = F_k_minus_1 + F_k_minus_2
+            F_k_minus_2 = F_k_minus_1
+            F_k_minus_1 = F_k
+        elif a[i] > F_k_minus_2:
+            break  
+        i += 1  
+    
+    return k - 1 if k > 0 else -1
+
+
+def read_arrays_from_file():
+    arrays = []
+    with open("input.txt", "r") as file:
+        for line in file:
+            array = list(map(int, line.strip().replace(" ", "").split(",")))  
+            arrays.append(array)
+    return arrays
+
+
+def main():
+    arrays = read_arrays_from_file()  
+    for array in arrays:
+        result = max_fibonacci_index_sorted(array, len(array))
+        print(f"Array: {array} -> Maximal index k: {result}")
+
+
+if __name__ == "__main__":
+    main()

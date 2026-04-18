@@ -1,0 +1,11 @@
+Greedy - Interval Selection
+To prove optimality of Greedy
+Huffman encoding
+Minimum Spanning Tree- Kruskal aur Prims with Time Complexity
+Dijkstra Shortest Path Algo
+
+Dynamic Programming- Max sum of line graph
+Rod cutting problem
+/////Knapsack problem
+/////Longest common subsequence problem
+///// Matrix chain multiplication

@@ -1,0 +1,4 @@
+1. Focus more on cfg and pda
+2. ⁠deriving turing machine from language and vice versa
+3. ⁠regular grammar
+4. ⁠dfa
